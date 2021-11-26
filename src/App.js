@@ -3,6 +3,7 @@ import './App.css';
 import { AmplifyAuthenticator, AmplifySignUp, AmplifySignOut } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import React from 'react';
+import Home from './Home';
 
 function App() {
   const [authState, setAuthState] = React.useState();
@@ -18,6 +19,7 @@ function App() {
   return authState === AuthState.SignedIn && user ? (
       <div className="App">
           <div>Hello, {user.username}</div>
+          <Home />
           <AmplifySignOut />
       </div>
     ) : (
